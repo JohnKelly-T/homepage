@@ -13,9 +13,163 @@
 }
 
 :root {
-  --text: hsl(0, 0%, 90%);
-  --background: hsl(220, 60%, 1%);
-  --primary: hsl(220, 70%, 50%);
-  --secondary: hsl(220, 100%, 7%);
-  --accent: hsl(240, 80%, 40%);
+  --text: 0, 0%, 80%;
+  --text-primary: 0, 0%, 100%;
+  --text-primary-dark: 0, 0%, 100%;
+  --text-secondary: 220, 60%, 50%;
+  --text-dark: 0, 0%, 70%;
+  --background: 210, 10%, 8%;
+  --background-yellow: 35, 30%, 30%;
+  --background-blue: 220, 50%, 30%;
+  --primary: 220, 70%, 60%;
+  --secondary: 220, 100%, 7%;
+  --accent: 220, 100%, 60%;
+
+  --hero-padding: 2rem;
+}
+
+body {
+  font-family: "Inter";
+  color: hsl(var(--text));
+  min-height: 100vh;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+  background: radial-gradient(ellipse 50% 50% at top center, hsla(var(--background-yellow), 0.25), hsla(var(--background), 0)),
+              radial-gradient(circle 400px at 25% 60%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: hsl(var(--background));
+  filter: url(#grainy);
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  gap: 7rem;
+}
+
+#hero-img {
+  max-width: 300px;
+  border: 5px solid white;
+  border-radius: 10px;
+}
+
+.intro-container {
+  display: flex;
+  width: 35%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+
+.greeting {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: hsl(var(--text-secondary));
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: hsl(var(--text-primary));
+  margin-bottom: -0.4rem;
+}
+
+.job-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: hsl(var(--text));
+}
+
+.description {
+  margin-top: 0.6rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.see-my-work {
+  margin-top: 1.5rem;
+  text-decoration: none;
+  color: hsl(var(--accent));
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: 1px solid hsl(var(--accent));
+  border-radius: 10px;
+  padding: 0.5rem 1.2rem;
+  box-shadow: 0 2px 2px hsla(var(--accent), .30),
+              0 4px 4px hsla(var(--accent), .15),
+              0 8px 8px hsla(var(--accent), .05)
+              ;
+}
+
+.logo, .resume-link, .mailto-link, .social-media-links {
+  position: absolute;
+  color: hsl(var(--text-primary));
+}
+
+.logo {
+  top: var(--hero-padding);
+  left: var(--hero-padding);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.resume-link {
+  top: var(--hero-padding);
+  right: var(--hero-padding);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid hsl(var(--text-primary));
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 4px hsla(var(--text-primary), .30);
+}
+
+.mailto-link {
+  bottom: var(--hero-padding);
+  left: var(--hero-padding);
+  writing-mode: sideways-lr;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+}
+
+.mailto-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.social-media-links {
+  bottom: var(--hero-padding);
+  right: var(--hero-padding);
+  width: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.socials-link {
+  color: hsl(var(--text-primary));
+  display: grid;
+  align-content: center;
+}
+
+.socials-link svg {
+  width: 100%;
+  aspect-ratio: 1;
 }

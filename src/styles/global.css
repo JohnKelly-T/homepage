@@ -11,3 +11,11 @@
   font-weight: 100 900;
   font-style: italic;
 }
+
+:root {
+  --text: hsl(0, 0%, 90%);
+  --background: hsl(220, 60%, 1%);
+  --primary: hsl(220, 70%, 50%);
+  --secondary: hsl(220, 100%, 7%);
+  --accent: hsl(240, 80%, 40%);
+}

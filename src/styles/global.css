@@ -35,6 +35,11 @@ body {
   min-height: 100vh;
 }
 
+h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
 #hero {
   position: relative;
   width: 100%;
@@ -173,4 +178,35 @@ body::before {
 .socials-link svg {
   width: 100%;
   aspect-ratio: 1;
+}
+
+#projects {
+  min-height: 100dvh;
+  padding: var(--hero-padding);
+  display: grid;
+  justify-content: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
+  max-width: 1600px;
+  padding: 2rem;
+  gap: min(5%, 10rem);
+}
+
+.projects-intro-container {
+  grid-column: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 0.5rem;
+}
+
+.projects-description {
+  max-width: 75ch;
+  text-align: center;
+  font-size: 1.2rem;
 }

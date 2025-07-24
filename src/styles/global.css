@@ -180,7 +180,6 @@ body::before {
 .social-media-links {
   bottom: var(--section-padding);
   right: var(--section-padding);
-  width: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
@@ -193,7 +192,7 @@ body::before {
 }
 
 .socials-link svg {
-  width: 100%;
+  width: 1.5rem;
   aspect-ratio: 1;
 }
 
@@ -272,4 +271,71 @@ body::before {
 .project-links svg {
   width: 2rem;
   aspect-ratio: 1;
+}
+
+footer {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--section-padding);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  gap: 1rem;
+}
+
+.contact .details {
+  padding: 1rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.details > div {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.details svg {
+  width: 2rem;
+  aspect-ratio: 1;
+}
+
+.send-a-message {
+  text-decoration: none;
+  padding: 1rem;
+  border: 1px solid hsl(var(--primary));
+  border-radius: 5px;
+  color: hsl(var(--primary));
+  font-size: 1.2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  box-shadow: 0 2px 2px hsla(var(--primary), .30),
+              0 4px 4px hsla(var(--primary), .15),
+              0 8px 8px hsla(var(--primary), .05)
+              ;
+}
+
+.send-a-message svg {
+  width: 2rem;
+}
+
+.socials-and-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .social-media-links {
+  position: initial;
+  flex-direction: row;
 }

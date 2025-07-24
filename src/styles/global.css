@@ -35,7 +35,7 @@
                   0 32px 32px rgba(0, 0, 0, 0.15),
                   0 64px 64px rgba(0, 0, 0, 0.15);
 
-  --hero-padding: 2rem;
+  --section-padding: 2rem;
 }
 
 body {
@@ -146,15 +146,15 @@ body::before {
 }
 
 .logo {
-  top: var(--hero-padding);
-  left: var(--hero-padding);
+  top: var(--section-padding);
+  left: var(--section-padding);
   font-size: 2rem;
   font-weight: 800;
 }
 
 .resume-link {
-  top: var(--hero-padding);
-  right: var(--hero-padding);
+  top: var(--section-padding);
+  right: var(--section-padding);
   text-decoration: none;
   font-weight: 600;
   border: 1px solid hsl(var(--text-primary));
@@ -164,8 +164,8 @@ body::before {
 }
 
 .mailto-link {
-  bottom: var(--hero-padding);
-  left: var(--hero-padding);
+  bottom: var(--section-padding);
+  left: var(--section-padding);
   writing-mode: sideways-lr;
   text-decoration: none;
   letter-spacing: 2px;
@@ -178,8 +178,8 @@ body::before {
 }
 
 .social-media-links {
-  bottom: var(--hero-padding);
-  right: var(--hero-padding);
+  bottom: var(--section-padding);
+  right: var(--section-padding);
   width: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -199,7 +199,7 @@ body::before {
 
 #projects {
   min-height: 100dvh;
-  padding: var(--hero-padding);
+  padding: var(--section-padding);
   display: grid;
   justify-content: center;
 }

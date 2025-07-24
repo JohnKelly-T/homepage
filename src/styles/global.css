@@ -18,7 +18,7 @@
   --text-primary-dark: 0, 0%, 100%;
   --text-secondary: 220, 60%, 50%;
   --text-dark: 0, 0%, 70%;
-  --background: 210, 10%, 8%;
+  --background: 230, 15%, 9%;
   --background-yellow: 35, 30%, 30%;
   --background-blue: 220, 50%, 30%;
   --primary: 220, 70%, 60%;
@@ -39,6 +39,7 @@
 }
 
 body {
+  position: relative;
   font-family: "Inter";
   background: hsl(var(--background));
   color: hsl(var(--text));
@@ -59,7 +60,7 @@ h2 {
   align-items: center;
   padding: 5rem;
   background: radial-gradient(ellipse 50% 50% at top center, hsla(var(--background-yellow), 0.25), hsla(var(--background), 0)),
-              radial-gradient(circle 400px at 25% 60%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
+              radial-gradient(circle 300px at 25% 50%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
 }
 
 body::before {

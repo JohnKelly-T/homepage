@@ -203,7 +203,8 @@ body::before {
   grid-template-rows: min-content;
   max-width: 1600px;
   padding: 2rem;
-  gap: min(5%, 10rem);
+  column-gap: min(5%, 10rem);
+  row-gap: 4rem;
 }
 
 .projects-intro-container {

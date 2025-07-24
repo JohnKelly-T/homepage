@@ -46,9 +46,15 @@ body {
   min-height: 100vh;
 }
 
-h2 {
+.section-heading {
   font-size: 2.2rem;
   font-weight: 800;
+}
+
+.section-description {
+  max-width: 75ch;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 #hero {
@@ -215,12 +221,6 @@ body::before {
   align-items: center;
   padding: 2rem;
   gap: 0.5rem;
-}
-
-.projects-description {
-  max-width: 75ch;
-  text-align: center;
-  font-size: 1.2rem;
 }
 
 #projects .card {

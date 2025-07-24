@@ -196,6 +196,48 @@ body::before {
   aspect-ratio: 1;
 }
 
+#about {
+  position: relative;
+  padding: 2rem;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8%;
+}
+
+#about::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  background: red;
+  transform: translateX(5%) rotate(-25deg);
+  background: radial-gradient(hsla(var(--background-blue), 0.3), hsla(var(--background), 0) 60%);
+  width: 80%;
+  height: 60%;
+}
+
+#about .section-description {
+  text-align: left;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 60ch;
+}
+
+#about img {
+  width: 300px;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border: 5px solid white;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+}
+
 #projects {
   min-height: 100dvh;
   padding: var(--section-padding);

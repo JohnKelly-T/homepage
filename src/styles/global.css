@@ -25,6 +25,16 @@
   --secondary: 220, 100%, 7%;
   --accent: 220, 100%, 60%;
 
+  --card-border-highlight: 50, 100%, 90%;
+  --card-border: 0, 0%, 35%; 
+  --card-shadow: 0 1px 1px rgba(0, 0, 0, 0.25),
+                  0 2px 2px rgba(0, 0, 0, 0.15),
+                  0 4px 4px rgba(0, 0, 0, 0.15),
+                  0 8px 8px rgba(0, 0, 0, 0.15),
+                  0 16px 16px rgba(0, 0, 0, 0.15),
+                  0 32px 32px rgba(0, 0, 0, 0.15),
+                  0 64px 64px rgba(0, 0, 0, 0.15);
+
   --hero-padding: 2rem;
 }
 
@@ -209,4 +219,55 @@ body::before {
   max-width: 75ch;
   text-align: center;
   font-size: 1.2rem;
+}
+
+#projects .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: min-content;
+  gap: 0.5rem;
+}
+
+#projects .card .styled-border, #projects .card .project-description {
+  grid-column: 1 / span 2;
+}
+
+#projects .styled-border {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 5px;
+  padding: 1px;
+  margin-bottom: 1.5rem;
+  background: radial-gradient(ellipse 40% 50% at top center, hsl(var(--card-border-highlight)), hsl(var(--card-border)));
+  box-shadow: var(--card-shadow);
+}
+
+.styled-border .screenshot {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background: hsl(var(--card-border));
+}
+
+.styled-border .more-info {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: end;
+}
+
+.project-links a {
+  color: hsl(var(--text));
+}
+
+.project-links svg {
+  width: 2rem;
+  aspect-ratio: 1;
 }

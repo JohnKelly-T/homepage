@@ -18,7 +18,8 @@
   --text-primary-dark: 0, 0%, 100%;
   --text-secondary: 220, 60%, 50%;
   --text-dark: 0, 0%, 70%;
-  --background: 230, 15%, 9%;
+  --background: 220, 15%, 9%;
+  --background-dark: 220, 75%, 4%;
   --background-yellow: 35, 30%, 30%;
   --background-blue: 220, 50%, 30%;
   --primary: 220, 70%, 60%;
@@ -47,6 +48,17 @@ body {
   overflow-x: hidden;
 }
 
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(hsl(var(--background)), hsl(var(--background-dark)) 80%);
+  filter: url(#grainy);
+}
+
 .section-heading {
   font-size: 2.2rem;
   font-weight: 800;
@@ -68,17 +80,6 @@ body {
   padding: 5rem;
   background: radial-gradient(ellipse 50% 50% at top center, hsla(var(--background-yellow), 0.25), hsla(var(--background), 0)),
               radial-gradient(circle 300px at 25% 50%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  background: hsl(var(--background));
-  filter: url(#grainy);
 }
 
 .hero-content {

@@ -518,6 +518,10 @@ footer .social-media-links {
   flex-direction: row;
 }
 
+.credit {
+  text-align: center;
+}
+
 @media screen and (max-width: 1200px) {
   nav {
     width: 85%;
@@ -664,6 +668,19 @@ footer .social-media-links {
 
   .skills-list {
     padding: 0;
+  }
+
+  .details {
+    flex-direction: column;
+    gap:0.5rem;
+  }
+
+  .divider {
+    display: none;
+  }
+
+  #contact {
+    gap: 2rem;
   }
 }
 

@@ -26,6 +26,8 @@
   --secondary: 220, 100%, 7%;
   --accent: 220, 100%, 60%;
 
+  --nav-background: 0, 0%, 100%;
+
   --card-border-highlight: 50, 100%, 90%;
   --card-border: 0, 0%, 35%; 
   --card-shadow: 0 1px 1px rgba(0, 0, 0, 0.25),
@@ -57,6 +59,67 @@ body::before {
   height: 100%;
   background: linear-gradient(hsl(var(--background)), hsl(var(--background-dark)) 80%);
   filter: url(#grainy);
+}
+
+header {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  border-radius: 100px;
+  width: 50%;
+  max-width: 900px;
+  justify-content: space-between;
+  background: hsla(var(--nav-background), 0.05);
+  backdrop-filter: blur(10px);
+  color: hsl(var(--text-primary));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25),
+              0 1px 1px rgba(0, 0, 0, 0.05),
+              0 2px 2px rgba(0, 0, 0, 0.05),
+              0 4px 4px rgba(0, 0, 0, 0.05),
+              0 8px 8px rgba(0, 0, 0, 0.05);
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  padding: 0.2rem 1rem;
+  font-weight: 500;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-button {
+  width: 1.5rem;
+  aspect-ratio: 1;
+}
+
+nav svg {
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .section-heading {
@@ -366,7 +429,7 @@ footer {
   padding: var(--section-padding);
 }
 
-.contact {
+#contact {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -374,7 +437,7 @@ footer {
   gap: 1rem;
 }
 
-.contact .details {
+#contact .details {
   padding: 1rem;
   font-size: 1.2rem;
   display: flex;

@@ -649,6 +649,14 @@ footer .social-media-links {
     display: grid;
     grid-template-columns: 1fr;
   }
+
+  #skills {
+    gap: 5rem;
+  }
+
+  .skills-list {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 400px) {

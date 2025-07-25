@@ -130,15 +130,15 @@ body::before {
 .see-my-work {
   margin-top: 1.5rem;
   text-decoration: none;
-  color: hsl(var(--accent));
+  color: hsl(var(--primary));
   font-size: 1.125rem;
   font-weight: 600;
-  border: 1px solid hsl(var(--accent));
+  border: 1px solid hsl(var(--primary));
   border-radius: 10px;
   padding: 0.5rem 1.2rem;
-  box-shadow: 0 2px 2px hsla(var(--accent), .30),
-              0 4px 4px hsla(var(--accent), .15),
-              0 8px 8px hsla(var(--accent), .05)
+  box-shadow: 0 2px 2px hsla(var(--primary), .30),
+              0 4px 4px hsla(var(--primary), .15),
+              0 8px 8px hsla(var(--primary), .05)
               ;
 }
 

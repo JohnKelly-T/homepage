@@ -133,6 +133,12 @@ nav svg {
   aspect-ratio: 1;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
 .section-heading {
   font-size: 2.2rem;
   font-weight: 800;
@@ -411,7 +417,6 @@ nav svg {
 }
 
 #skills {
-  margin-top: 8rem;
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
@@ -425,6 +430,7 @@ nav svg {
   flex-direction: column;
   gap: 1.5rem;
   align-items: center;
+  margin-top: 4rem;
 }
 
 .skills-list {

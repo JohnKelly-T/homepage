@@ -391,6 +391,10 @@ nav svg {
   opacity: 0;
 }
 
+.project-title {
+  align-self: end;
+}
+
 .project-links {
   display: flex;
   gap: 0.6rem;
@@ -648,6 +652,10 @@ footer .social-media-links {
     padding: 0;
     display: grid;
     grid-template-columns: 1fr;
+  }
+
+  .project-links {
+    gap: 1.5rem;
   }
 
   #skills {

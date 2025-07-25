@@ -582,3 +582,63 @@ footer .social-media-links {
     text-align: left;
   }
 }
+
+@media screen and (max-width: 760px) {
+  :root {
+    --section-padding: 1rem;
+  }
+  
+  header {
+    display: none;
+  }
+
+  #hero {
+    padding: 2rem;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  #hero-img {
+    width: 60%;
+  }
+  
+  .intro-container {
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .intro-container * {
+    text-align: center;
+  }
+  
+  .greeting {
+    font-size: 1rem;
+  }
+
+  .mailto-link, .social-media-links {
+    display: none;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .job-title {
+    font-size: 1.5rem;
+  }
+
+  .scroll-down-icon {
+    left: var(--section-padding);
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .description {
+    display: none;
+  }
+}

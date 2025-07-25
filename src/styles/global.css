@@ -43,11 +43,16 @@
   scroll-behavior: smooth;
 }
 
+body, html {
+  overflow-x: hidden;
+}
+
 body {
   position: relative;
   font-family: "Inter";
   background: hsl(var(--background));
   color: hsl(var(--text));
+  width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
 }
@@ -150,18 +155,21 @@ nav svg {
 .hero-content {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 7rem;
 }
 
 #hero-img {
   max-width: 300px;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
   border: 5px solid white;
   border-radius: 10px;
 }
 
 .intro-container {
   display: flex;
-  width: 35%;
+  width: min(35%, 600px);
   flex-direction: column;
   justify-content: center;
   align-items: start;
@@ -499,4 +507,38 @@ footer {
 footer .social-media-links {
   position: initial;
   flex-direction: row;
+}
+
+@media screen and (max-width: 1024px) {
+  .hero-content {
+    gap: 4rem;
+  }
+
+  .intro-container {
+    flex: 1;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .job-title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .social-media-links {
+    gap: 2rem;
+  }
+
+  .socials-link svg {
+    width: 2rem;
+  }
+
+  header {
+    display: none;
+  }
 }

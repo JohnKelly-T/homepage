@@ -57,6 +57,10 @@ body {
   overflow-x: hidden;
 }
 
+body * {
+  display: block;
+}
+
 body::before {
   content: '';
   position: absolute;

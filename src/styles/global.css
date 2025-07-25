@@ -546,4 +546,20 @@ footer .social-media-links {
     flex-direction: column-reverse;
     gap: 5rem;
   }
+
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .projects-intro-container {
+    grid-column: 1;
+
+    padding: 0;
+    align-items: start;
+    justify-content: center;
+  }
+
+  .projects-intro-container .section-description {
+    text-align: left;
+  }
 }

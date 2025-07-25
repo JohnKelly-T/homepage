@@ -39,6 +39,8 @@
                   0 64px 64px rgba(0, 0, 0, 0.15);
 
   --section-padding: 2rem;
+
+  scroll-behavior: smooth;
 }
 
 body {

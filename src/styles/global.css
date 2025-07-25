@@ -595,6 +595,14 @@ footer .social-media-links {
   :root {
     --section-padding: 1rem;
   }
+
+  .section-heading {
+    font-size: 2rem;
+  }
+
+  .section-description {
+    font-size: 1rem;
+  }
   
   header {
     display: none;
@@ -673,6 +681,10 @@ footer .social-media-links {
   .details {
     flex-direction: column;
     gap:0.5rem;
+  }
+
+  .details * {
+    font-size: 1rem;
   }
 
   .divider {

@@ -510,6 +510,10 @@ footer .social-media-links {
 }
 
 @media screen and (max-width: 1024px) {
+  .section-description {
+    max-width: 50ch;
+  }
+  
   .hero-content {
     gap: 4rem;
   }

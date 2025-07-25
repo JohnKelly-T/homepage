@@ -284,7 +284,7 @@ nav svg {
 
 #about {
   position: relative;
-  padding: 2rem;
+  padding: var(--section-padding);
   min-height: 100dvh;
   display: flex;
   justify-content: center;
@@ -540,5 +540,10 @@ footer .social-media-links {
 
   header {
     display: none;
+  }
+
+  #about {
+    flex-direction: column-reverse;
+    gap: 5rem;
   }
 }

@@ -666,6 +666,14 @@ footer .social-media-links {
     grid-template-columns: 1fr;
   }
 
+  .projects-intro-container {
+    align-items: center;
+  }
+
+  .projects-intro-container .section-description {
+    text-align: center;
+  }
+
   .project-links {
     gap: 1.5rem;
   }

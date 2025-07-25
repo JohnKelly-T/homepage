@@ -261,6 +261,17 @@ nav svg {
   aspect-ratio: 1;
 }
 
+.scroll-down-icon {
+  color: hsl(var(--text-primary));
+  opacity: 0.5;
+  position: absolute;
+  bottom: var(--section-padding);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3rem;
+  aspect-ratio: 1;
+}
+
 #about {
   position: relative;
   padding: 2rem;

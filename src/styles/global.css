@@ -635,6 +635,15 @@ footer .social-media-links {
     left: var(--section-padding);
     transform: none;
   }
+
+  #about {
+    gap: 2rem;
+  }
+
+  #about .section-heading {
+    text-align: center;
+  }
+  
 }
 
 @media screen and (max-width: 400px) {

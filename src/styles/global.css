@@ -240,6 +240,7 @@ nav svg {
   border-radius: 10px;
   padding: 0.5rem;
   box-shadow: 0 2px 4px hsla(var(--text-primary), .30);
+  font-weight: 300;
 }
 
 .mailto-link {

@@ -83,6 +83,8 @@
                   0 32px 32px rgba(0, 0, 0, 0.15),
                   0 64px 64px rgba(0, 0, 0, 0.15);
 
+  --golden-glow: 50, 100%, 49%;
+
   --section-padding: 2rem;
 
   scroll-behavior: smooth;
@@ -301,6 +303,11 @@ main {
   font-size: 2.2rem;
   font-weight: 700;
   color: hsl(var(--text));
+  transition: text-shadow 200ms ease;
+}
+
+.job-title:hover {
+  text-shadow: 0 0px 15px hsl(var(--golden-glow));
 }
 
 .description {

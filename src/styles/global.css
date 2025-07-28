@@ -219,6 +219,15 @@ main {
               radial-gradient(circle 300px at 25% 50%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
 }
 
+#hero img, #about img {
+  transition: transform 200ms ease;
+  box-shadow: var(--card-shadow);
+}
+
+#hero img:hover, #about img:hover {
+  transform: scale(102%) translateY(-1%) rotate(-3deg);
+}
+
 .hero-content {
   display: flex;
   justify-content: center;

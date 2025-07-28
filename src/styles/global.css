@@ -12,6 +12,20 @@
   font-style: italic;
 }
 
+/* animations */
+
+@keyframes up-and-down {
+  from {
+    transform: translateY(0);
+  } 
+  
+  to {
+    transform: translateY(-30%);
+  }
+}
+
+/* end of animations */
+
 :root {
   --text: 0, 0%, 80%;
   --text-primary: 0, 0%, 100%;
@@ -303,6 +317,8 @@ main {
   transform: translateX(-50%);
   width: 3rem;
   aspect-ratio: 1;
+  animation: up-and-down 700ms ease-in-out alternate;
+  animation-iteration-count: infinite;
 }
 
 #about {

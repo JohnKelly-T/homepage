@@ -219,12 +219,37 @@ main {
               radial-gradient(circle 300px at 25% 50%, hsla(var(--background-blue), 0.25), hsla(var(--background), 0));
 }
 
-#hero img, #about img {
+#hero-img, #about-img {
+  position: relative;
   transition: transform 200ms ease;
   box-shadow: var(--card-shadow);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
-#hero img:hover, #about img:hover {
+@keyframes shine {
+  100% {
+    transform: translate(300%, 30%) rotate(45deg);
+  }
+}
+
+#hero-img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 150%;
+  opacity: 0.7;
+  transform: translate(-60%, -60%) rotate(45deg);
+  background: linear-gradient(90deg,rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+}
+
+#hero-img:hover::after {
+  animation: shine 700ms ease;
+}
+
+#hero-img:hover, #about-img:hover {
   transform: scale(102%) translateY(-1%) rotate(-3deg);
 }
 
@@ -236,7 +261,11 @@ main {
 }
 
 #hero-img {
-  max-width: 300px;
+  width: 300px;
+}
+
+#hero img {
+  max-width: 100%;
   aspect-ratio: 3 / 4;
   object-fit: cover;
   border: 5px solid white;
@@ -429,8 +458,12 @@ main {
   max-width: 60ch;
 }
 
-#about img {
+#about-img {
   width: 300px;
+}
+
+#about img {
+  width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
   border: 5px solid white;

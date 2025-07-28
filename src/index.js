@@ -4,6 +4,7 @@ import './styles/global.css';
 // code for hiding and showing nav based on scroll
 let lastScrollPos = 0;
 let nav = document.querySelector("nav");
+let header = document.querySelector("header");
 
 document.addEventListener('scroll', () => {
   // if scrolling down hide nav else show nav
@@ -15,4 +16,8 @@ document.addEventListener('scroll', () => {
 
   // update last scroll pos
   lastScrollPos = window.scrollY;
+});
+
+header.addEventListener("mouseenter", () => {
+  nav.classList.remove("hide");
 });

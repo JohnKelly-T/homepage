@@ -388,6 +388,12 @@ main {
   padding: 0.5rem;
   box-shadow: 0 2px 4px hsla(var(--text-primary), .30);
   font-weight: 300;
+  transition: transform 200ms ease;
+}
+
+.resume-link:hover{
+  transform: scale(105%);
+  filter: contrast(200%);
 }
 
 .mailto-link {
@@ -397,11 +403,13 @@ main {
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 0.8rem;
+  transition: transform 200ms ease;
 }
 
 .mailto-link:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
+  transform: translateY(-4px);
 }
 
 .social-media-links {
@@ -409,13 +417,18 @@ main {
   right: var(--section-padding);
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+  gap: 1.5rem;
 }
 
 .socials-link {
   color: hsl(var(--text-primary));
   display: grid;
   align-content: center;
+  transition: transform 200ms ease;
+}
+
+.socials-link:hover {
+  transform: translateY(-4px);
 }
 
 .socials-link svg {

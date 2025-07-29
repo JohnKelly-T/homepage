@@ -510,9 +510,10 @@ main {
 
 #projects .card {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto;
   grid-auto-rows: min-content;
-  gap: 0.5rem;
+  row-gap: 0.5rem;
+  column-gap: 1rem;
 }
 
 #projects .card .styled-border, #projects .card .project-description {

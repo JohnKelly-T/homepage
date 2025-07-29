@@ -614,6 +614,26 @@ main {
   aspect-ratio: 1;
 }
 
+.live-project-link {
+  transition: transform 200ms ease;
+}
+
+.live-project-link:hover {
+  transform: rotate(-45deg);
+  transition: transform 200ms cubic-bezier(0.68,-1,0.27,1.75);
+}
+
+.github-repo-link {
+  transition: transform 200ms ease;
+  transform-origin: bottom;
+}
+
+.github-repo-link:hover {
+  transform: scale(1.1);
+  transition: transform 200ms cubic-bezier(0.68,-2,0.27,1.75);
+  
+}
+
 #skills {
   min-height: 100dvh;
   display: flex;

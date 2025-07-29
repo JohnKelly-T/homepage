@@ -141,7 +141,7 @@ header {
 nav {
   display: flex;
   align-items: center;
-  padding: 0.5rem 2rem;
+  padding: 0 2rem;
   width: 75%;
   border-radius: 100px;
   max-width: 900px;
@@ -174,12 +174,37 @@ nav ul {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
   align-items: center;
-  padding: 0.2rem 1rem;
+  padding: 0.4rem 0;
   font-size: 0.9rem;
   font-weight: 300;
 }
+
+nav li {
+  position: relative;
+  padding: 0.4rem 1rem;
+}
+
+nav li::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 50%;
+  height: 3px;
+  transform: translateX(-50%) scaleX(0) ;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  transition: transform 200ms ease;
+}
+
+nav li:hover::before, nav li.active::before {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
 
 nav a {
   color: inherit;

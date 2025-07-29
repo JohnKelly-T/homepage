@@ -21,21 +21,22 @@ document.addEventListener('scroll', () => {
   // update last scroll pos
   lastScrollPos = window.scrollY;
 
-  // add active class to nav list when scrolling through section
-  pageSections.forEach(section => {
-    let scrollY = window.scrollY;
-    let viewportHeight = window.innerHeight;
-    let centerY = scrollY + (viewportHeight / 2);
+  let scrollY = window.scrollY;
+  let viewportHeight = window.innerHeight;
+  let centerY = scrollY + (viewportHeight / 2);
 
+  // remove active classes from all sections
+  navList.forEach(link => {
+    link.classList.remove('active');
+  });
+
+  // add active class to section on screen
+  pageSections.forEach(section => {
     let secTop = section.offsetTop;
     let secHeight = section.offsetHeight;
     let secId = section.dataset.id;
 
     if (centerY > secTop && centerY < secTop + secHeight) {
-      navList.forEach(link => {
-        link.classList.remove('active');
-      });
-
       navList[secId].classList.add('active');
     }
   });

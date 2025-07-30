@@ -11,6 +11,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
+      meta: {
+        "og:title": {property: "og:title", content: "John Kelly | Web Developer Portfolio"},
+        "og:description": {property: "og:description", content: "Front-end developer with focus on building interactive and engaging digital experiences. See my latest web development projects."},
+        "og:image": {property: "og:image", content: "https://johnkelly-t.github.io/homepage/src/assets/img/og-image"},
+        "og:url": {property: "og:url", content: "https://johnkelly-t.github.io/homepage/"},
+      }
     }),
   ],
   module: {

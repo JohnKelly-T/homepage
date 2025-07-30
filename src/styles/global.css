@@ -940,6 +940,18 @@ footer .social-media-links {
   .projects-intro-container .section-description {
     text-align: left;
   }
+
+  .card:nth-child(3n) {
+    animation-delay: 0s;
+  }
+
+  .card:nth-child(3n+1) {
+    animation-delay: 0s;
+  }
+
+  .card:nth-child(even) {
+    animation-delay: 100ms;
+  }
 }
 
 @media screen and (max-width: 760px) {
@@ -1027,6 +1039,10 @@ footer .social-media-links {
 
   .project-links {
     gap: 1.5rem;
+  }
+
+  .card:nth-child(even) {
+    animation-delay: 0s;
   }
 
   #skills {

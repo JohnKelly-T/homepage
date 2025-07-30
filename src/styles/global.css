@@ -633,6 +633,14 @@ main {
   column-gap: 1rem;
 }
 
+.card:nth-child(3n) {
+  animation-delay: 100ms;
+}
+
+.card:nth-child(3n+1) {
+  animation-delay: 200ms;
+}
+
 #projects .card .styled-border, #projects .card .project-description {
   grid-column: 1 / span 2;
 }

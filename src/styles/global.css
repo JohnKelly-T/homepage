@@ -234,7 +234,7 @@ nav {
 }
 
 .light nav {
-  background: hsla(var(--nav-background), 0.4);
+  background: hsla(var(--nav-background), 0.7);
 }
 
 nav.hide {

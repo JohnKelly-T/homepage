@@ -85,8 +85,8 @@
   --text-primary-dark: 0, 0%, 100%;
   --text-secondary: 220, 60%, 50%;
   --text-dark: 0, 0%, 70%;
-  --background: 220, 15%, 9%;
-  --background-dark: 220, 75%, 4%;
+  --background: 220, 15%, 10%;
+  --background-dark: 220, 75%, 7%;
   --background-yellow: 35, 30%, 30%;
   --background-blue: 220, 50%, 30%;
   --primary: 220, 70%, 60%;
@@ -106,6 +106,39 @@
                   0 64px 64px rgba(0, 0, 0, 0.15);
 
   --golden-glow: 50, 100%, 49%;
+
+  --section-padding: 2rem;
+
+  scroll-behavior: smooth;
+}
+
+:root.light {
+  --text: 220, 60%, 30%;
+  --text-primary: 220, 70%, 45%;
+  --text-primary-dark: 220, 70%, 30%;
+  --text-secondary: 220, 50%, 20%;
+  --text-dark: 0, 0%, 70%;
+  --background: 220, 60%, 90%;
+  --background-dark: 220, 50%, 80%;
+  --background-yellow: 40, 80%, 80%;
+  --background-blue: 220, 90%, 50%;
+  --primary: 220, 70%, 40%;
+  --secondary: 220, 100%, 7%;
+  --accent: 220, 100%, 60%;
+
+  --nav-background: 0, 0%, 100%;
+
+  --card-border-highlight: 220, 60%, 80%;
+  --card-border: 220, 60%, 50%; 
+  --card-shadow: 0 1px 1px hsla(220, 20%, 50%, 0.25),
+                  0 2px 2px hsla(220, 20%, 50%, 0.25),
+                  0 4px 4px hsla(220, 20%, 50%, 0.25),
+                  0 8px 8px hsla(220, 20%, 50%, 0.25),
+                  0 16px 16px hsla(220, 20%, 50%, 0.25),
+                  0 32px 32px hsla(220, 20%, 50%, 0.15),
+                  0 64px 64px hsla(220, 20%, 50%, 0.15);
+
+  --golden-glow: 50, 100%, 70%;
 
   --section-padding: 2rem;
 
@@ -142,6 +175,7 @@ body {
 }
 
 body * {
+  font-family: "Inter";
   display: block;
 }
 
@@ -154,6 +188,10 @@ body::before {
   height: 100%;
   background: linear-gradient(hsl(var(--background)), hsl(var(--background-dark)) 80%);
   filter: url(#grainy);
+}
+
+.light body::before {
+  filter: url(#grainy-light);
 }
 
 header {
@@ -195,6 +233,10 @@ nav {
   transition: transform 200ms ease-out;
 }
 
+.light nav {
+  background: hsla(var(--nav-background), 0.4);
+}
+
 nav.hide {
   transform: translateY(-200%);
   transition: transform 200ms ease-in;
@@ -234,7 +276,7 @@ nav li::before {
   height: 3px;
   transform: translateX(-50%) scaleX(0) ;
   border-radius: 50px;
-  background: rgba(255, 255, 255, 0.5);
+  background: hsl(var(--text-primary), 0.5);
   transition: transform 200ms ease;
 }
 
@@ -546,8 +588,11 @@ main {
   aspect-ratio: 1;
 }
 
+.light .scroll-down-icon {
+  filter: brightness(100%);
+}
+
 .scroll-down-icon.show {
-  opacity: 0;
   animation: fade-in 500ms forwards, up-and-down 700ms ease-in-out alternate infinite;
   animation-composition: add;
   animation-delay: 1500ms, 2000ms;
@@ -682,6 +727,10 @@ main {
   transition: opacity 200ms ease;
 } 
 
+.light .more-info {
+  background: hsla(220, 50%, 20%, 0.5);
+}
+
 .more-info:hover {
   opacity: 1;
 }
@@ -799,6 +848,15 @@ main {
           drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25))
           drop-shadow(0 8px 8px rgba(0, 0, 0, 0.25))
           drop-shadow(0 16px 16px rgba(0, 0, 0, 0.25));
+}
+
+.light .skill-icon svg {
+  color: #171515;
+  filter: drop-shadow(0 1px 1px hsla(220, 20%, 50%, 0.25))
+        drop-shadow(0 2px 2px hsla(220, 20%, 50%, 0.25))
+        drop-shadow(0 4px 4px hsla(220, 20%, 50%, 0.25))
+        drop-shadow(0 8px 8px hsla(220, 20%, 50%, 0.25))
+        drop-shadow(0 16px 16px hsla(220, 20%, 50%, 0.25));
 }
 
 footer {

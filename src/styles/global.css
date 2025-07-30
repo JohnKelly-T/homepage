@@ -55,6 +55,28 @@
     opacity: 0;
   }
 }
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  } 
+
+  to {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
 /* end of animations */
 
 :root {
@@ -92,6 +114,17 @@
 
 .noise-effect {
   display: none;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.show {
+  opacity: 1;
+  animation: fade-up 800ms ease;
+  animation-fill-mode: backwards;
 }
 
 body, html {
@@ -135,6 +168,11 @@ header {
   width: 65%;
   padding-top: 2rem;
   transition: transform 0.5s ease;
+}
+
+header.show {
+  animation: slide-down 800ms ease;
+  animation-composition: accumulate;
 }
 
 
@@ -256,6 +294,7 @@ main {
   box-shadow: var(--card-shadow);
   overflow: hidden;
   border-radius: 10px;
+  will-change: transform;
 }
 
 @keyframes shine {
@@ -295,6 +334,10 @@ main {
   width: 300px;
 }
 
+#hero-img.show {
+  animation-delay: 200ms;
+}
+
 #hero img {
   max-width: 100%;
   aspect-ratio: 3 / 4;
@@ -317,6 +360,10 @@ main {
   color: hsl(var(--text-secondary));
 }
 
+.greeting.show {
+  animation-delay: 200ms;
+}
+
 .name {
   font-size: 3.5rem;
   font-weight: 800;
@@ -324,12 +371,22 @@ main {
   margin-bottom: -0.4rem;
 }
 
+.name.show {
+  animation-delay: 300ms;
+}
+
+
 .job-title {
   font-size: 2.2rem;
   font-weight: 700;
   color: hsl(var(--text));
   transition: text-shadow 200ms ease;
 }
+
+.job-title.show{
+  animation-delay: 400ms;
+}
+
 
 .job-title:hover {
   text-shadow: 0 0px 15px hsl(var(--golden-glow));
@@ -340,6 +397,11 @@ main {
   font-size: 1.125rem;
   font-weight: 500;
 }
+
+.description.show {
+  animation-delay: 500ms;
+}
+
 
 .see-my-work {
   position: relative;
@@ -355,6 +417,10 @@ main {
               0 4px 4px hsla(var(--primary), .15),
               0 8px 8px hsla(var(--primary), .05)
               ;
+}
+
+.see-my-work.show {
+  animation-delay: 600ms;
 }
 
 .see-my-work:hover, .send-a-message:hover {
@@ -403,6 +469,10 @@ main {
   font-weight: 800;
 }
 
+.logo.show, .resume-link.show {
+  animation: fade-in 800ms ease-in;
+}
+
 .resume-link {
   top: var(--section-padding);
   right: var(--section-padding);
@@ -437,6 +507,10 @@ main {
   transform: translateY(-4px);
 }
 
+.mailto-link.show, .social-media-links.show {
+  animation-delay: 1000ms;
+}
+
 .social-media-links {
   bottom: var(--section-padding);
   right: var(--section-padding);
@@ -463,15 +537,20 @@ main {
 
 .scroll-down-icon {
   color: hsl(var(--text-primary));
-  opacity: 0.5;
   position: absolute;
   bottom: var(--section-padding);
   left: 50%;
   transform: translateX(-50%);
+  filter: brightness(50%);
   width: 3rem;
   aspect-ratio: 1;
-  animation: up-and-down 700ms ease-in-out alternate;
-  animation-iteration-count: infinite;
+}
+
+.scroll-down-icon.show {
+  opacity: 0;
+  animation: fade-in 500ms forwards, up-and-down 700ms ease-in-out alternate infinite;
+  animation-composition: add;
+  animation-delay: 1500ms, 2000ms;
 }
 
 #about {

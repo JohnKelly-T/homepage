@@ -14,7 +14,7 @@ module.exports = {
       meta: {
         "og:title": {property: "og:title", content: "John Kelly | Web Developer Portfolio"},
         "og:description": {property: "og:description", content: "Front-end developer with focus on building interactive and engaging digital experiences. See my latest web development projects."},
-        "og:image": {property: "og:image", content: "https://github.com/JohnKelly-T/homepage/blob/646b60eb92e62421aac6f873b0882477a87c566f/src/assets/img/og-image.png"},
+        "og:image": {property: "og:image", content: "https://raw.githubusercontent.com/JohnKelly-T/homepage/646b60eb92e62421aac6f873b0882477a87c566f/src/assets/img/og-image.png"},
         "og:url": {property: "og:url", content: "https://johnkelly-t.github.io/homepage/"},
       }
     }),

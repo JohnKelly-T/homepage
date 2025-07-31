@@ -77,6 +77,30 @@
     opacity: 1;
   }
 }
+
+@keyframes showOptions {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hideOptions {
+  0% {
+    opacity: 0;
+    transform: translateY(-10%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* end of animations */
 
 :root {
@@ -203,7 +227,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 65%;
+  width: 50%;
   padding-top: 2rem;
   transition: transform 0.5s ease;
 }
@@ -218,7 +242,7 @@ nav {
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  width: 75%;
+  width: 100%;
   border-radius: 100px;
   max-width: 900px;
   justify-content: space-between;
@@ -230,7 +254,7 @@ nav {
               0 2px 2px rgba(0, 0, 0, 0.05),
               0 4px 4px rgba(0, 0, 0, 0.05),
               0 8px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 200ms ease-out;
+  transition: transform 200ms ease-out, opacity 200ms ease;
 }
 
 .light nav {
@@ -238,16 +262,9 @@ nav {
 }
 
 nav.hide {
+  opacity: 0;
   transform: translateY(-200%);
-  transition: transform 200ms ease-in;
-}
-
-nav button {
-  background: none;
-  border: none;
-  color: inherit;
-  padding: 0;
-  cursor: pointer;
+  transition: transform 200ms ease-in, opacity 200ms ease;
 }
 
 nav ul {
@@ -294,11 +311,92 @@ nav a {
 .nav-button {
   width: 1.5rem;
   aspect-ratio: 1;
+  background: none;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
 }
 
 nav svg {
   width: 100%;
   aspect-ratio: 1;
+  pointer-events: none;
+}
+
+.options {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  display: none;
+  flex-direction: column;
+  font-size: 0.9rem;
+  min-width: 150px;
+  padding: 0.2rem;
+  border-radius: 15px;
+  background: hsla(var(--nav-background), 0.05);
+  backdrop-filter: blur(10px);
+  color: hsl(var(--text-primary));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25),
+              0 1px 1px rgba(0, 0, 0, 0.05),
+              0 2px 2px rgba(0, 0, 0, 0.05),
+              0 4px 4px rgba(0, 0, 0, 0.05),
+              0 8px 8px rgba(0, 0, 0, 0.05);
+  animation: hideOptions 200ms ease;
+}
+
+.light .options {
+  background: hsla(var(--nav-background), 0.7);
+}
+
+.options.open {
+  display: flex;
+  animation: showOptions 200ms ease;
+}
+
+.option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  gap: 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.option button {
+  position: relative;
+  width: 2.5rem;
+  height: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  background: lightgray;
+  cursor: pointer;
+}
+
+.option button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  transform: translateY(-50%);
+  height: 90%;
+  aspect-ratio: 1;
+  background: white;
+  border-radius: 50px;
+  transition: transform 200ms ease;
+}
+
+.option.enabled button {
+  background: hsl(110, 50%, 50%);
+}
+
+.option.enabled button::before {
+  transform: translateY(-50%) translateX(75%);
 }
 
 main {
@@ -1133,4 +1231,9 @@ footer .social-media-links {
   .description {
     display: none;
   }
+}
+
+.reduced-motion *, .reduced-motion *::before, .reduced-motion *::after {
+  transition: none !important; 
+  animation: none !important;
 }

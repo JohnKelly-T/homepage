@@ -9,11 +9,13 @@ let header = document.querySelector("header");
 // variables for changing active nav link when section passes center of the screen
 let navList = document.querySelectorAll("nav li");
 let pageSections = document.querySelectorAll("section:not(#hero)");
+let options = document.querySelector(".options");
 
 document.addEventListener('scroll', () => {
   // if scrolling down hide nav else show nav
   if (window.scrollY > lastScrollPos) {
     nav.classList.add("hide");
+    options.classList.remove("open");
   } else {
     nav.classList.remove("hide");
   }
@@ -117,3 +119,43 @@ observer.observe(contactDescription);
 observer.observe(contactDetails);
 observer.observe(contactCta);
 observer.observe(socialsAndCredits);
+
+// #########################################################
+//    Code for preferences dropdown
+// #########################################################
+
+let preferences = document.querySelector("#preferences");
+options = document.querySelector(".options");
+
+preferences.addEventListener("click", (e) => {
+  options.classList.toggle("open");
+});
+
+let darkModeOption = document.querySelector("#dark-mode-option");
+let motionOption = document.querySelector("#motion-option");
+
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle("light");
+}
+
+darkModeOption.addEventListener("click", (e) => {
+  toggleDarkMode();
+  darkModeOption.classList.toggle("enabled");
+});
+
+
+function toggleMotion() {
+  document.documentElement.classList.toggle("reduced-motion");
+}
+
+motionOption.addEventListener("click", (e) => {
+  toggleMotion();
+  motionOption.classList.toggle("enabled");
+});
+
+document.addEventListener("click", (e) => {
+  if (!e.target.matches("#preferences") && !e.target.matches(".options") && !e.target.matches(".options *")) {
+    options.classList.remove("open");
+  }
+});

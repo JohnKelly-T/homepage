@@ -198,6 +198,10 @@
   animation-fill-mode: backwards;
 }
 
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body, html {
   overflow-x: hidden;
 }

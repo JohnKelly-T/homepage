@@ -1059,7 +1059,25 @@ footer .social-media-links {
   background: transparent;
 }
 
-
+#mobile-menu { 
+  display: none;
+  position: fixed;
+  bottom: var(--section-padding);
+  right: var(--section-padding);
+  z-index: 2;
+  width: 3.5rem;
+  height: 3.5rem;
+  padding: 0.5rem;
+  border-radius: 100px;
+  background: hsla(var(--nav-background), 0.05);
+  backdrop-filter: blur(10px);
+  color: hsl(var(--text-primary));
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.25),
+              0 1px 1px rgba(0, 0, 0, 0.05),
+              0 2px 2px rgba(0, 0, 0, 0.05),
+              0 4px 4px rgba(0, 0, 0, 0.05),
+              0 8px 8px rgba(0, 0, 0, 0.05);
+}
 
 @media screen and (max-width: 1024px) {
   .section-description {
@@ -1192,11 +1210,6 @@ footer .social-media-links {
     font-size: 1.5rem;
   }
 
-  .scroll-down-icon {
-    left: var(--section-padding);
-    transform: none;
-  }
-
   #about {
     gap: 2rem;
   }
@@ -1250,6 +1263,10 @@ footer .social-media-links {
 
   #contact {
     gap: 2rem;
+  }
+
+  #mobile-menu {
+    display: block;
   }
 }
 

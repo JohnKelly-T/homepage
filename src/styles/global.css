@@ -1092,6 +1092,10 @@ footer .social-media-links {
   transition: transform 200ms ease;
 }
 
+#mobile-menu * {
+  pointer-events: none;
+}
+
 #mobile-menu.hide {
   transform: translateY(150%);
 }
@@ -1172,7 +1176,7 @@ footer .social-media-links {
 }
 
 @media screen and (max-width: 760px) {
-  :root {
+  :root, :root.light {
     --section-padding: 1rem;
   }
 
@@ -1192,14 +1196,10 @@ footer .social-media-links {
     bottom: calc(var(--section-padding) + 4rem);
   }
 
-  header.show {
-    animation: none;
-  }
-
   header.show-mobile {
+    opacity: 1;
     display: flex;
-    animation: showOptionsMobile 200ms ease;
-    animation-composition: add;
+    animation: none;
   }
 
   nav {
@@ -1208,6 +1208,7 @@ footer .social-media-links {
     row-gap: 1rem;
     border-radius: 15px;
     padding: 1rem;
+    animation: showOptionsMobile 200ms ease;
   }
 
   nav.hide {

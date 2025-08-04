@@ -167,3 +167,11 @@ document.addEventListener("click", (e) => {
     options.classList.remove("open");
   }
 });
+
+document.addEventListener("touchend", (e) => {
+  console.log(e.target)
+  if (!e.target.matches("#mobile-menu") && !e.target.matches("#preferences") && !e.target.matches(".nav") && !e.target.matches(".options *") && !e.target.matches("nav") && !e.target.matches("nav *")) {
+    options.classList.remove("open");
+    header.classList.remove("show-mobile");
+  }
+});

@@ -1061,23 +1061,17 @@ footer .social-media-links {
 
 
 
-@media screen and (max-width: 1200px) {
-  nav {
-    width: 85%;
-  }
-}
-
 @media screen and (max-width: 1024px) {
   .section-description {
     max-width: 50ch;
   }
 
-  nav {
-    width: 100%;
+  header {
+    width: 60%;
   }
 
   nav ul {
-    gap: 2rem;
+    gap: 1rem;
   }
   
   .hero-content {

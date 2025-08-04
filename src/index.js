@@ -10,14 +10,22 @@ let header = document.querySelector("header");
 let navList = document.querySelectorAll("nav li");
 let pageSections = document.querySelectorAll("section:not(#hero)");
 let options = document.querySelector(".options");
+let mobileMenuButton = document.querySelector("#mobile-menu");
+
+mobileMenuButton.addEventListener("click", () => {
+  header.classList.toggle("show-mobile");
+});
 
 document.addEventListener('scroll', () => {
   // if scrolling down hide nav else show nav
   if (window.scrollY > lastScrollPos) {
     nav.classList.add("hide");
     options.classList.remove("open");
+    mobileMenuButton.classList.add("hide");
+    header.classList.remove("show-mobile");
   } else {
     nav.classList.remove("hide");
+    mobileMenuButton.classList.remove("hide");
   }
 
   // update last scroll pos

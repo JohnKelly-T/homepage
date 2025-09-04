@@ -5,18 +5,32 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"),
     clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./src/template.html",
       meta: {
-        "og:title": {property: "og:title", content: "John Kelly | Web Developer Portfolio"},
-        "og:description": {property: "og:description", content: "Front-end developer with focus on building interactive and engaging digital experiences. See my latest web development projects."},
-        "og:image": {property: "og:image", content: "https://raw.githubusercontent.com/JohnKelly-T/homepage/646b60eb92e62421aac6f873b0882477a87c566f/src/assets/img/og-image.png"},
-        "og:url": {property: "og:url", content: "https://johnkelly-t.github.io/homepage/"},
-      }
+        "og:title": {
+          property: "og:title",
+          content: "John Kelly | Web Developer Portfolio",
+        },
+        "og:description": {
+          property: "og:description",
+          content:
+            "Front-end developer with focus on building interactive and engaging digital experiences. See my latest web development projects.",
+        },
+        "og:image": {
+          property: "og:image",
+          content:
+            "https://raw.githubusercontent.com/JohnKelly-T/homepage/646b60eb92e62421aac6f873b0882477a87c566f/src/assets/img/og-image.png",
+        },
+        "og:url": {
+          property: "og:url",
+          content: "https://johnkelly-t.github.io/homepage/",
+        },
+      },
     }),
   ],
   module: {
@@ -41,15 +55,13 @@ module.exports = {
         test: /\.(?:js|mjs|cjs)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
             targets: "defaults",
-            presets: [
-              ['@babel/preset-env']
-            ],
+            presets: [["@babel/preset-env"]],
             cacheDirectory: true,
-          }
-        }
+          },
+        },
       },
     ],
   },

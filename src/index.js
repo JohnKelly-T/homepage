@@ -1,5 +1,6 @@
-import './styles/reset.css';
-import './styles/global.css';
+import "./styles/reset.css";
+import "./styles/global.css";
+import Resume from "./john-kelly-cv.pdf";
 
 // variables for hiding and showing nav based on scroll
 let lastScrollPos = 0;
@@ -16,7 +17,13 @@ mobileMenuButton.addEventListener("click", () => {
   header.classList.toggle("show-mobile");
 });
 
-document.addEventListener('scroll', () => {
+window.addEventListener("load", () => {
+  let resumeLink = document.querySelector(".resume-link");
+
+  resumeLink.href = Resume;
+});
+
+document.addEventListener("scroll", () => {
   // if scrolling down hide nav else show nav
   if (window.scrollY > lastScrollPos) {
     nav.classList.add("hide");
@@ -33,21 +40,21 @@ document.addEventListener('scroll', () => {
 
   let scrollY = window.scrollY;
   let viewportHeight = window.innerHeight;
-  let centerY = scrollY + (viewportHeight / 2);
+  let centerY = scrollY + viewportHeight / 2;
 
   // remove active classes from all sections
-  navList.forEach(link => {
-    link.classList.remove('active');
+  navList.forEach((link) => {
+    link.classList.remove("active");
   });
 
   // add active class to section on screen
-  pageSections.forEach(section => {
+  pageSections.forEach((section) => {
     let secTop = section.offsetTop;
     let secHeight = section.offsetHeight;
     let secId = section.dataset.id;
 
     if (centerY > secTop && centerY < secTop + secHeight) {
-      navList[secId].classList.add('active');
+      navList[secId].classList.add("active");
     }
   });
 });
@@ -56,18 +63,20 @@ header.addEventListener("mouseenter", () => {
   nav.classList.remove("hide");
 });
 
-
 // #########################################################
 //    Code for animating elements when visible on viewport
 // #########################################################
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    } 
-  });
-}, {threshold: 0.5});
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.5 },
+);
 
 //    Hero elements
 let heroImg = document.querySelector("#hero-img");
@@ -85,39 +94,46 @@ observer.observe(heroEmailLink);
 observer.observe(heroSocialMediaLinks);
 observer.observe(scrollDownIcon);
 observer.observe(logo);
-introContainerElements.forEach(el => observer.observe(el));
-
+introContainerElements.forEach((el) => observer.observe(el));
 
 //    About elements
 let aboutHeading = document.querySelector(".about-text .section-heading");
-let aboutDescriptions = document.querySelectorAll(".about-text .section-description");
-let aboutImg = document.querySelector("#about-img")
+let aboutDescriptions = document.querySelectorAll(
+  ".about-text .section-description",
+);
+let aboutImg = document.querySelector("#about-img");
 
 observer.observe(aboutHeading);
 observer.observe(aboutImg);
-aboutDescriptions.forEach(el => observer.observe(el));
+aboutDescriptions.forEach((el) => observer.observe(el));
 
 //    Project Elements
 let projectHeading = document.querySelector("#projects .section-heading");
-let projectDescription = document.querySelector("#projects .section-description");
+let projectDescription = document.querySelector(
+  "#projects .section-description",
+);
 let projectCards = document.querySelectorAll(".card");
 
 observer.observe(projectHeading);
 observer.observe(projectDescription);
-projectCards.forEach(el => observer.observe(el));
+projectCards.forEach((el) => observer.observe(el));
 
 //    Skills Elemnents
 let skillsHeading = document.querySelector("#skills .section-heading");
-let skillsDescriptions = document.querySelectorAll("#skills .section-description");
+let skillsDescriptions = document.querySelectorAll(
+  "#skills .section-description",
+);
 let skillsList = document.querySelectorAll("#skills .skills-list");
 
 observer.observe(skillsHeading);
-skillsDescriptions.forEach(el => observer.observe(el));
-skillsList.forEach(el => observer.observe(el));
+skillsDescriptions.forEach((el) => observer.observe(el));
+skillsList.forEach((el) => observer.observe(el));
 
 //    Contact Elements
 let contactHeading = document.querySelector("#contact .section-heading");
-let contactDescription = document.querySelector("#contact .section-description");
+let contactDescription = document.querySelector(
+  "#contact .section-description",
+);
 let contactDetails = document.querySelector("#contact .details");
 let contactCta = document.querySelector("#contact .send-a-message");
 let socialsAndCredits = document.querySelector(".socials-and-credits");
@@ -142,7 +158,6 @@ preferences.addEventListener("click", (e) => {
 let darkModeOption = document.querySelector("#dark-mode-option");
 let motionOption = document.querySelector("#motion-option");
 
-
 function toggleDarkMode() {
   document.documentElement.classList.toggle("light");
 }
@@ -151,7 +166,6 @@ darkModeOption.addEventListener("click", (e) => {
   toggleDarkMode();
   darkModeOption.classList.toggle("enabled");
 });
-
 
 function toggleMotion() {
   document.documentElement.classList.toggle("reduced-motion");
@@ -163,14 +177,25 @@ motionOption.addEventListener("click", (e) => {
 });
 
 document.addEventListener("click", (e) => {
-  if (!e.target.matches("#preferences") && !e.target.matches(".options") && !e.target.matches(".options *")) {
+  if (
+    !e.target.matches("#preferences") &&
+    !e.target.matches(".options") &&
+    !e.target.matches(".options *")
+  ) {
     options.classList.remove("open");
   }
 });
 
 document.addEventListener("touchend", (e) => {
-  console.log(e.target)
-  if (!e.target.matches("#mobile-menu") && !e.target.matches("#preferences") && !e.target.matches(".nav") && !e.target.matches(".options *") && !e.target.matches("nav") && !e.target.matches("nav *")) {
+  console.log(e.target);
+  if (
+    !e.target.matches("#mobile-menu") &&
+    !e.target.matches("#preferences") &&
+    !e.target.matches(".nav") &&
+    !e.target.matches(".options *") &&
+    !e.target.matches("nav") &&
+    !e.target.matches("nav *")
+  ) {
     options.classList.remove("open");
     header.classList.remove("show-mobile");
   }

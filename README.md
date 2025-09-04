@@ -2,6 +2,10 @@
 
 This project is a homepage created as part of The Odin Project's curriculum that I fully personalized and turned into my portfolio. It serves as an exercise in building a foundational web page using HTML and CSS, with a focus on layout, semantic structure, and responsive design.
 
+## Live Demo
+
+https://johnkelly.vercel.app/
+
 ## Features
 
 - **Responsive Layout:** The page is designed to adapt to different screen sizes, providing an optimal viewing experience on both desktop and mobile devices.
